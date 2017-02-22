@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Question 1 </title>
+
+<script type="text/javascript">
+function submit() {
+
+	function check() {
+
+	var optionSelected = document.getElementsByName('quest1');
+	var ans;
+
+	for(var i=0; i<optionSelected.length; i++) {
+		if(optionSelected[i].checked) {
+			ans = optionSelected[i].value;
+			return true;
+		}
+	}
+	return false;
+}
+
+if(check() && document.getElementById('opt4').checked) {
+		alert('Correct!');
+		window.location.href = "q1.html";
+
+		// location.href = 'Question2.html?qa=1&qc=1';
+	}
+	else if(check() && !document.getElementById('opt4').checked) {
+			alert('Wrong!');
+			window.location.href = "LoginPage.html";
+
+
+		// location.href = 'Question2.html?qa=1&qc=0';
+	}
+	else {
+			alert('No option Selected!');
+			window.location.href = "Question1.html";
+
+
+		// location.href = 'Question2.html?qa=0&qc=0'
+	}
+}
+
+// if(ans != "" && ans != null && ans=="opt1") {
+// 	alert('Correct!');
+// 	// location.href = 'Question2.html?s=1&a=1';
+// } else if(ans != "" && ans!=null && ans!="opt1") {
+// 	alert('Wrong!');
+// 	// location.href = 'Question2.html?s=0&a=1';
+// } else {
+// 	// location.href = 'Question2.html?s=0&a=0';
+// 	alert('No option Selected!');
+// }
+
+// }
+
+// function checkAns() {
+
+// 	var radioSelected = document.getElementsByName('quest1');
+// 	var ans;
+
+// 	for(var i=0; i<radioSelected.length; i++) {
+// 		if(radioSelected[i].checked) {
+// 			ans = radioSelected[i].value;
+
+// 			break;
+// 		}
+// 	}
+
+// 	if(ans != "" && ans == document.getElementById('opt1').value) {
+
+// 	}
+// }
+
+
+
+</script>
+</head>
+
+
+<body>
+
+	<center>
+
+	<div class="container" style="width:1200px; 
+		border: 2px solid black;
+		background-color:white;
+		height:600px;
+		border-radius:10px;
+		margin-top:30px">
+	
+		<header>
+			<div style=
+			"background-color:DarkGray;
+			color:black;
+			padding:10px;
+			text-align:center;
+			border-top-right-radius:10px;
+			border-top-left-radius:10px;
+			border:1px solid black;
+			"> Question 1
+			</div>  
+		</header>
+
+		<section class="left">
+			<p style="padding-left:10px; text-align:left; padding-bottom:20px"> 
+				Given points (x1, y1) and (x2, y2) select the formula to find the equation of the given line. 
+			</p>
+
+			<form name="form1" method="post" style="padding-left:10px;text-align:left;margin-top:40px;margin-bottom:40px">
+
+				<input type="radio" id="opt1" name="quest1" value="opt1" style="text-align:left">
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+						<msup>
+							<mi>y<mi>
+						</msup>
+						<mo> = </mo>
+						<msup>
+							<mi>mx<mi>
+						</msup>
+						<mo> + </mo>
+						<msup>
+							<mi>b<mi>
+						</msup>
+					</mrow>
+				</math>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<input type="radio" id="opt2" name="quest1" value="opt2" style=""> 
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+						<msup>
+							<mi>(x-h)<mi>
+								<mn>2<mn>
+						</msup>
+						<mo> + </mo>
+						<msup>
+							<mi>(y-k)<mi>
+								<mn>2<mn>
+						</msup>
+						<mo> = </mo>
+						<msup>
+							<mi>r<mi>
+								<mn>2<mn>
+						</msup>
+					</mrow>
+				</math>
+
+				<br><br><br><br>
+
+				<input type="radio" id="opt3" name="quest1" value="opt3" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+					<mrow>
+						<msup>
+							<mi>(y-y1)<mi>
+						</msup>
+						<mo> = </mo>
+						<msup>
+							<mi>m(x-x1)<mi>
+						</msup>
+					</mrow>
+				</math>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<input type="radio" id="opt4" name="quest1" value="opt4" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
+				<math xmlns="http://www.w3.org/1998/Math/MathML">
+
+					<!-- Complete this equation !!!!!!!!!!!!!!! -->
+
+					<mrow>
+						<msup>
+							<mi>(y-y2)<mi>
+						</msup>
+						<mo> = </mo>
+						<msup>
+							<mi>m(x-x1)<mi>
+						</msup>
+					</mrow>
+				</math>
+
+
+				<br><br><br><br>
+
+				<input type="button" id="submit" value="Submit & Next Question" onClick="submit()" style="border-radius:10px;height:40px;background-color:white">
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+				<input type="reset" id="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
+
+			</form>
+
+			<aside style="float:right;padding-right:10px">
+
+				<!-- draw the line !!!!! -->
+
+			</aside>
+
+		</section>
+
+		<footer>
+			<div style=
+			"background-color:Gainsboro;
+			color:black;
+			text-align:center;
+			margin-top:200px;
+			border-bottom-right-radius:10px;
+			border-bottom-left-radius:10px;
+			padding:10px;
+			width:1157px;
+			margin-left:0px;
+			border: 1px solid black;
+			"> 
+
+
+			<input type="button" id="submit" value="Submit & Next Question" onClick="submit()" style="border-radius:10px;height:40px;background-color:white">
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+			<input type="reset" id="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
+
+
+			</div>
+
+		</footer>
+
+
+
+
+
+</center>
+
+
+
+
+</body>
+
+</html>
