@@ -26,6 +26,33 @@
 
 function submitQuestion() {
 
+	var urlRecieved = window.location.search;
+	var correctCount;
+	var ansCount;
+
+	var mathC;
+	var mathA;
+
+	var verbalC=0;
+	var verbalA=0;
+
+	var url = urlRecieved.split("?");
+
+	var urlCorrectAndAns = url[1].split("&");
+	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+	correctCount = parseInt(urlCorrect);
+	ansCount = parseInt(urlAns);
+
+	mathC = parseInt(urlCorrect);
+	mathA = parseInt(urlAns);
+
+
+
+
+
+
 	function checkB1() {
 
 	var optionSelected = document.getElementsByName('blank1');
@@ -56,18 +83,27 @@ function submitQuestion() {
 
 if(checkB1() && document.getElementById('opt1').checked && checkB2() && document.getElementById('opt2').checked) {
 
-		alert('Correct!');
-		window.location.href = "Question4.html?s=2&a=2";
+	correctCount++;
+	ansCount++;
+
+	verbalC++;
+	verbalA++;
+
+	alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else if(checkB1() || checkB2()) {
+			ansCount++;
 
-		alert('Wrong!');
-		window.location.href = "Question4.html?s=0&a=1";
+			verbalA++;
+		alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else {
-		alert('No option Selected!');
-		window.location.href = "Question4.html?s=0&a=0";
+		alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 	}
+
 }
 
 // if(ans != "" && ans != null && ans=="opt1") {

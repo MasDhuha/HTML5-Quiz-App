@@ -9,24 +9,148 @@
 	<script type="text/javascript">
 
 	function showScoreQ() {
-		document.getElementById('qa').innerHTML = 33;
-		document.getElementById('qc').innerHTML = 33;
+
+		var urlRecieved = window.location.search;
+		var correctCount;
+		var ansCount;
+
+		var mathC;
+		var mathA;
+
+		var verbalC;
+		var verbalA;
+
+		var videoC;
+		var videoA;
+
+		var url = urlRecieved.split("?");
+
+		var urlCorrectAndAns = url[1].split("&");
+
+		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+		var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+		var urlMathC = urlCorrectAndAns[2].split("=")[1];
+		var urlMathA = urlCorrectAndAns[3].split("=")[1];
+
+		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+
+		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+
+		correctCount = parseInt(urlCorrect);
+		ansCount = parseInt(urlAns);
+
+		mathC = parseInt(urlMathC);
+		mathA = parseInt(urlMathA);
+
+		verbalC = parseInt(urlVerbalC);
+		verbalA = parseInt(urlVerbalA);
+
+		videoC = parseInt(urlVideoC);
+		videoA = parseInt(urlVideoA);
+
+		document.getElementById('qa').innerHTML = mathA;
+		document.getElementById('qc').innerHTML = mathC;
 		document.getElementById('qs').innerHTML = 33;
 
 
 	}
 
 	function showScoreR() {
-		document.getElementById('ra').innerHTML = 33;
-		document.getElementById('rc').innerHTML = 33;
+		var urlRecieved = window.location.search;
+		var correctCount;
+		var ansCount;
+
+		var mathC;
+		var mathA;
+
+		var verbalC;
+		var verbalA;
+
+		var videoC;
+		var videoA;
+
+		var url = urlRecieved.split("?");
+
+		var urlCorrectAndAns = url[1].split("&");
+
+		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+		var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+		var urlMathC = urlCorrectAndAns[2].split("=")[1];
+		var urlMathA = urlCorrectAndAns[3].split("=")[1];
+
+		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+
+		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+
+		correctCount = parseInt(urlCorrect);
+		ansCount = parseInt(urlAns);
+
+		mathC = parseInt(urlMathC);
+		mathA = parseInt(urlMathA);
+
+		verbalC = parseInt(urlVerbalC);
+		verbalA = parseInt(urlVerbalA);
+
+		videoC = parseInt(urlVideoC);
+		videoA = parseInt(urlVideoA);
+
+		document.getElementById('ra').innerHTML = verbalA;
+		document.getElementById('rc').innerHTML = verbalC;
 		document.getElementById('rs').innerHTML = 33;
 
 
 	}
 
 	function showScoreV() {
-		document.getElementById('va').innerHTML = 33;
-		document.getElementById('vc').innerHTML = 33;
+		var urlRecieved = window.location.search;
+		var correctCount;
+		var ansCount;
+
+		var mathC;
+		var mathA;
+
+		var verbalC;
+		var verbalA;
+
+		var videoC;
+		var videoA;
+
+		var url = urlRecieved.split("?");
+
+		var urlCorrectAndAns = url[1].split("&");
+
+		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+		var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+		var urlMathC = urlCorrectAndAns[2].split("=")[1];
+		var urlMathA = urlCorrectAndAns[3].split("=")[1];
+
+		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+
+		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+
+		correctCount = parseInt(urlCorrect);
+		ansCount = parseInt(urlAns);
+
+		mathC = parseInt(urlMathC);
+		mathA = parseInt(urlMathA);
+
+		verbalC = parseInt(urlVerbalC);
+		verbalA = parseInt(urlVerbalA);
+
+		videoC = parseInt(urlVideoC);
+		videoA = parseInt(urlVideoA);
+		
+		document.getElementById('va').innerHTML = videoA;
+		document.getElementById('vc').innerHTML = videoC;
 		document.getElementById('vs').innerHTML = 33;
 
 

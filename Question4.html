@@ -26,6 +26,43 @@
 
 function submitQuestion() {
 
+	var urlRecieved = window.location.search;
+	var correctCount;
+	var ansCount;
+
+	var mathC;
+	var mathA;
+
+	var verbalC;
+	var verbalA;
+
+	var videoC=0;
+	var videoA=0;
+
+	// "Question4.html?c=1&a=1&mc=1&ma=1&vc=1&va=1";
+
+	var url = urlRecieved.split("?");
+
+	var urlCorrectAndAns = url[1].split("&");
+
+	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+	var urlMathC = urlCorrectAndAns[2].split("=")[1];
+	var urlMathA = urlCorrectAndAns[3].split("=")[1];
+
+	var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+	var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+
+	correctCount = parseInt(urlCorrect);
+	ansCount = parseInt(urlAns);
+
+	mathC = parseInt(urlMathC);
+	mathA = parseInt(urlMathA);
+
+	verbalC = parseInt(urlVerbalC);
+	verbalA = parseInt(urlVerbalA);
+
 	function checkAns() {
 
 	var optionSelected = document.getElementsByName('quest4');
@@ -41,18 +78,25 @@ function submitQuestion() {
 }
 
 if(checkAns() && document.getElementById('opt1').checked) {
+	correctCount = correctCount +1;
+	ansCount++;
 
-		alert('Correct!');
-		window.location.href = "Survey.html?s=2&a=2";
+	videoA++;
+	videoC++;
+
+	alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else if(checkAns() && !document.getElementById('opt1').checked) {
+		ansCount++;
+		videoA++;
 
-		alert('Wrong!');
-		window.location.href = "Survey.html?s=0&a=1";
+		alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else {
-		alert('No option Selected!');
-		window.location.href = "Survey.html?s=0&a=0";
+		alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 	}
 }
 

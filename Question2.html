@@ -9,6 +9,20 @@
 <script type="text/javascript">
 
 function submitQuestion() {
+	// Question2.html?c=1&a=1
+
+	var urlRecieved = window.location.search;
+	var correctCount;
+	var ansCount;
+	var url = urlRecieved.split("?");
+
+	var urlCorrectAndAns = url[1].split("&");
+	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+	correctCount = parseInt(urlCorrect);
+	ansCount = parseInt(urlAns);
+
 
 	function check() {
 
@@ -25,20 +39,22 @@ function submitQuestion() {
 }
 
 if(check() && document.getElementById('opt4').checked) {
+	correctCount = correctCount +1;
+	ansCount++;
 
-		alert('Correct!');
-		window.location.href = "Question3.html?s=1&a=1";
-
+	alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 	}
-	else if(check() && !document.getElementById('opt4').checked) {
 
-			alert('Wrong!');
-			window.location.href = "Question3.html?s=0&a=1";
+	else if(check() && !document.getElementById('opt4').checked) {
+		ansCount++;
+		alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 
 	}
 	else {
-			alert('No option Selected!');
-			window.location.href = "Question3.html?s=0&a=0";
+		alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
+		window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 	}
 }
 
