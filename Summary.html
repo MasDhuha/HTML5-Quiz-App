@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Score Card </title>
+
+	<script type="text/javascript">
+
+	function showScoreQ() {
+		document.getElementById('qa').innerHTML = 33;
+		document.getElementById('qc').innerHTML = 33;
+		document.getElementById('qs').innerHTML = 33;
+
+
+	}
+
+	function showScoreR() {
+		document.getElementById('ra').innerHTML = 33;
+		document.getElementById('rc').innerHTML = 33;
+		document.getElementById('rs').innerHTML = 33;
+
+
+	}
+
+	function showScoreV() {
+		document.getElementById('va').innerHTML = 33;
+		document.getElementById('vc').innerHTML = 33;
+		document.getElementById('vs').innerHTML = 33;
+
+
+	}
+
+	
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container" style="width:1200px; 
+		border: 2px solid black;
+		background-color:white;
+		height:650px;
+		border-radius:10px;
+		margin-top:20px">
+	
+		<header>
+			<div style=
+			"background-color:DarkGray;
+			color:black;
+			padding:10px;
+			text-align:center;
+			border-top-right-radius:10px;
+			border-top-left-radius:10px;
+			border:1px solid black;
+			"> <bold>Score Card<bold>
+			</div>  
+		</header>
+
+
+		<div style="border:1px solid black; width:1100px; height:465px; margin-left:40px; margin-right:10px; margin-top:20px">
+			<br>
+			<section style="padding-left:40px">
+
+				<details>
+					<summary onClick="showScoreQ()"> Quantitive Section</summary>
+					<p> Number of Questions Answered: <span id="qa">____</span> </p>
+					<p> Number of Correct Answers: <span id="qc">____</span> </p>
+					<p> Score: <span id="qs">____</span> </p>
+				</details>
+
+				<br>
+
+				<details>
+					<summary onClick="showScoreR()"> Reading Section</summary>
+					<p> Number of Questions Answered: <span id="ra">____</span> </p>
+					<p> Number of Correct Answers: <span id="rc">____</span> </p>
+					<p> Score: <span id="rs">____</span> </p>
+				</details>
+
+				<br>
+
+				<details>
+					<summary onClick="showScoreV()"> Audio/Video Section</summary>
+					<p> Number of Questions Answered: <span id="va">____</span> </p>
+					<p> Number of Correct Answers: <span id="vc">____</span> </p>
+					<p> Score: <span id="vs">____</span> </p>
+				</details>
+
+
+
+
+			</section>
+
+		</div>
+		<br>
+
+		<div style="text-align:center">
+
+			<label>
+				<big><bold> Thank You </bold></big>
+			</label>
+
+			<br><br>
+
+			<input type="button" id="finish" value="Finish" onClick="location.href='LoginPage.html'" style="border-radius:10px;height:40px;background-color:white; width:200px">
+
+
+		</div>
+
+
+
+
+		
+
+
+
+</body>
+
+
+
+
+
+

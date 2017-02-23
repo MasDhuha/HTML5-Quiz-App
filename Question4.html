@@ -43,16 +43,16 @@ function submitQuestion() {
 if(checkAns() && document.getElementById('opt1').checked) {
 
 		alert('Correct!');
-		window.location.href = "Question4.html?s=2&a=2";
+		window.location.href = "Survey.html?s=2&a=2";
 
 	} else if(checkAns() && !document.getElementById('opt1').checked) {
 
 		alert('Wrong!');
-		window.location.href = "Question4.html?s=0&a=1";
+		window.location.href = "Survey.html?s=0&a=1";
 
 	} else {
 		alert('No option Selected!');
-		window.location.href = "Question4.html?s=0&a=0";
+		window.location.href = "Survey.html?s=0&a=0";
 	}
 }
 
@@ -113,7 +113,7 @@ if(checkAns() && document.getElementById('opt1').checked) {
 			border-top-right-radius:10px;
 			border-top-left-radius:10px;
 			border:1px solid black;
-			"> Question 3
+			"> Question 4
 			</div>  
 
 		</header>
