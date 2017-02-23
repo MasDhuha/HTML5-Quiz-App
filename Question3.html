@@ -4,15 +4,31 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Question 2 </title>
+	<title> Question 3 </title>
+	<style>
+
+	div.right {
+		width: 50%; 
+		float: right;
+
+	}
+
+	div.left {
+		width: 50%;
+		float: left;
+
+	}
+
+
+	</style>
 
 <script type="text/javascript">
 
 function submitQuestion() {
 
-	function check() {
+	function checkB1() {
 
-	var optionSelected = document.getElementsByName('quest2');
+	var optionSelected = document.getElementsByName('blank1');
 	var ans;
 
 	for(var i=0; i<optionSelected.length; i++) {
@@ -24,21 +40,33 @@ function submitQuestion() {
 	return false;
 }
 
-if(check() && document.getElementById('opt4').checked) {
+	function checkB2() {
+
+	var optionSelected = document.getElementsByName('blank2');
+	var ans;
+
+	for(var i=0; i<optionSelected.length; i++) {
+		if(optionSelected[i].checked) {
+			ans = optionSelected[i].value;
+			return true;
+		}
+	}
+	return false;
+}
+
+if(checkB1() && document.getElementById('opt1').checked && checkB2() && document.getElementById('opt2').checked) {
 
 		alert('Correct!');
-		window.location.href = "Question3.html?s=1&a=1";
+		window.location.href = "Question4.html?s=2&a=2";
 
-	}
-	else if(check() && !document.getElementById('opt4').checked) {
+	} else if(checkB1() || checkB2()) {
 
-			alert('Wrong!');
-			window.location.href = "Question3.html?s=0&a=1";
+		alert('Wrong!');
+		window.location.href = "Question4.html?s=0&a=1";
 
-	}
-	else {
-			alert('No option Selected!');
-			window.location.href = "Question3.html?s=0&a=0";
+	} else {
+		alert('No option Selected!');
+		window.location.href = "Question4.html?s=0&a=0";
 	}
 }
 
@@ -99,177 +127,101 @@ if(check() && document.getElementById('opt4').checked) {
 			border-top-right-radius:10px;
 			border-top-left-radius:10px;
 			border:1px solid black;
-			"> Question 2
+			"> Question 3
 			</div>  
+
 		</header>
 
-		<section class="left">
-			<p style="padding-left:10px; text-align:left; padding-bottom:20px"> 
-				Select the cosine theorem formula. 
+		<div class="left">
+
+		<section>
+			<p style="padding-left:10px; text-align:left; padding-bottom:20px">
+				As per the latest twitter news, complete the article snippet given by selecting appropriate choices for the blanks. 
 			</p>
 
-			<form name="form2" method="post" style="padding-left:10px;text-align:left;margin-top:40px;margin-bottom:40px">
+			&nbsp;&nbsp;&nbsp;&nbsp;
 
-				<input type="radio" id="opt1" name="quest2" value="opt1" style="text-align:left">
-				<math xmlns="http://www.w3.org/1998/Math/MathML">
-					<mrow>
-						cos(
-						<!-- alpha -->
-						<mo> &#945 </mo>  
-						<!-- +,- -->
-						<mo> &#x00B1 </mo>
-						<!-- beta -->
-						<mo> &#946 </mo>
-						) 
-						<mo> = </mo>
-						cos<mo> &#945 </mo> 
-						cos<mo> &#946 </mo>
-						<!-- -,+ -->
-						<mi> &#x2213 </mi>
-						sin<mo> &#945 </mo> 
-						sin<mo> &#946 </mo>
-					</mrow>
-				</math>
+			<form name="form3" method="post" style="padding-left:10px;text-align:left;margin-top:40px;margin-bottom:40px">
 
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" id="opt1" name="blank1" value="$650" onClick="document.getElementById('b1').innerHTML = 650" style="text-align:left"> 
+				Option 1 Mark 1: $650
 
-				<input type="radio" id="opt2" name="quest2" value="opt2" style=""> 
-				<math xmlns="http://www.w3.org/1998/Math/MathML">
-					<mrow>
-						sin(
-						<!-- alpha -->
-						<mo> &#945 </mo>  
-						<!-- +,- -->
-						<mo> &#x00B1 </mo>
-						<!-- beta -->
-						<mo> &#946 </mo>
-						) 
-						<mo> = </mo>
-						sin<mo> &#945 </mo> 
-						cos<mo> &#946 </mo>
-						<!-- +,- -->
-						<mi> &#x00B1 </mi>
-						cos<mo> &#945 </mo> 
-						sin<mo> &#946 </mo>
-					</mrow>
-				</math>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				<input type="radio" id="opt2" name="blank2" value="Twitter" onClick="document.getElementById('b2').innerHTML = 'Twitter'" style=""> 
+				Option 1 Mark 2: Twitter
+				
 
 				<br><br><br><br>
 
-				<input type="radio" id="opt3" name="quest2" value="opt3" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
-				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				<input type="radio" id="opt3" name="blank1" value="$550" onClick="document.getElementById('b1').innerHTML = 550" style="padding-left:10px; text-align:left; padding-bottom:20px">
+				Option 2 Mark 1: $550 
+				
 
-				<!-- Verify the equation  !!!!!!!!!!!!!!! -->
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-					<mrow>
-						sin
-						<!-- alpha -->
-						<mo> &#945 </mo> 
-						<mo> + </mo>
-						sin
-						<!-- beta -->
-						<mo> &#946 </mo> 
-						<mo> = </mo>
-						2sin
-						<mfenced>
-							<mfrac>
-								<mrow>
-									<mo> &#945 </mo>
-									<mo> + </mo>
-									<mo> &#946 </mo>
-								</mrow>
-								<mrow>
-									<mn>2</mn>
-								</mrow>
-							</mfrac>
-						</mfenced>
-						cos
-						<mfenced>
-							<mfrac>
-								<mrow>
-									<mo> &#945 </mo>
-									<mo> - </mo>
-									<mo> &#946 </mo>
-								</mrow>
-								<mrow>
-									<mn>2</mn>
-								</mrow>
-							</mfrac>
-						</mfenced>
-					</mrow>
+				<input type="radio" id="opt4" name="blank2" value="Google" onClick="document.getElementById('b2').innerHTML = 'Google'" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
+				Option 1 Mark 2: Google
 
-				</math>
+				<br><br><br><br>
 
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" id="opt5" name="blank1" value="$650" onClick="document.getElementById('b1').innerHTML = 650" style="padding-left:10px; text-align:left; padding-bottom:20px">
+				Option 3 Mark 1: $650 
+				
 
-				<input type="radio" id="opt4" name="quest2" value="opt4" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
-				<math xmlns="http://www.w3.org/1998/Math/MathML">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-					<!-- Complete this equation !!!!!!!!!!!!!!! -->
-
-					<mrow>
-						sin
-						<!-- alpha -->
-						<mo> &#945 </mo> 
-						<mo> - </mo>
-						sin
-						<!-- beta -->
-						<mo> &#946 </mo> 
-						<mo> = </mo>
-						2cos
-						<mfenced>
-							<mfrac>
-								<mrow>
-									<mo> &#945 </mo>
-									<mo> + </mo>
-									<mo> &#946 </mo>
-								</mrow>
-								<mrow>
-									<mn>2</mn>
-								</mrow>
-							</mfrac>
-						</mfenced>
-						sin
-						<mfenced>
-							<mfrac>
-								<mrow>
-									<mo> &#945 </mo>
-									<mo> - </mo>
-									<mo> &#946 </mo>
-								</mrow>
-								<mrow>
-									<mn>2</mn>
-								</mrow>
-							</mfrac>
-						</mfenced>
-					</mrow>
-				</math>
+				<input type="radio" id="opt6" name="blank2" value="Facebook" onClick="document.getElementById('b2').innerHTML = 'Facebook'" style="padding-left:10px; text-align:left; padding-bottom:20px"> 
+				Option 1 Mark 2: Facebook
 
 				<br><br><br><br>
 
 			</form>
 
+			
+
 		</section>
+	</div>
+
+	<div class="right">
+
+		<!-- style="float:right;padding-right:10px;" -->
+
+		<aside>
+				<p style="text-align:justify;padding-right:30px;padding-left:100px">
+					Twitter wants more cash. The company announced two $ <mark id="b1">___ </mark> million debt offerings in a filing today, each with a potential $100 increase provided that the sales are oversubscribed. Assuming full tip, including the 100 million boosters, <mark id="b2"> ____ </mark> will raise up to $1.5 billion with the two offerings.
+					<br> 
+				</p>
+				<p style="text-align:left;padding-right:30px;padding-left:100px">
+					<small>Source: http://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/ </small>
+
+				</p>
+
+			</aside>
+
+
+
+	</div>
 
 		<footer>
-			<div style=
+			<div class="bottom" style=
 			"background-color:Gainsboro;
 			color:black;
 			text-align:center;
-			margin-top:200px;
+			margin-top:480px;
 			border-bottom-right-radius:10px;
 			border-bottom-left-radius:10px;
 			padding:10px;
 			width:1157px;
 			margin-left:0px;
 			border: 1px solid black;
-			"> 
+			">
 
-			<input type="button" id="submit" value="Submit & Next Question" onClick="submitQuestion()" style="border-radius:10px;height:40px;background-color:white">
+			<input type="button" id="submit" value="Submit & Next Question" onClick="submitQuestion()" style="position:center;border-radius:10px;height:40px;background-color:white">
 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-			<input type="reset" id="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
+			<input type="reset" name="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
 
 			</div>
 
