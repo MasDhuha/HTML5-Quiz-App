@@ -84,53 +84,28 @@ if(checkAns() && document.getElementById('opt1').checked) {
 	videoA++;
 	videoC++;
 
-	alert('Correct! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
+
+	// alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else if(checkAns() && !document.getElementById('opt1').checked) {
 		ansCount++;
 		videoA++;
 
-		alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else {
-		alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
+		// alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 	}
 }
 
-// if(ans != "" && ans != null && ans=="opt1") {
-// 	alert('Correct!');
-// 	// location.href = 'Question2.html?s=1&a=1';
-// } else if(ans != "" && ans!=null && ans!="opt1") {
-// 	alert('Wrong!');
-// 	// location.href = 'Question2.html?s=0&a=1';
-// } else {
-// 	// location.href = 'Question2.html?s=0&a=0';
-// 	alert('No option Selected!');
-// }
+function reloadPage() {
 
-// }
+	window.location.reload();
 
-// function checkAns() {
-
-// 	var radioSelected = document.getElementsByName('quest1');
-// 	var ans;
-
-// 	for(var i=0; i<radioSelected.length; i++) {
-// 		if(radioSelected[i].checked) {
-// 			ans = radioSelected[i].value;
-
-// 			break;
-// 		}
-// 	}
-
-// 	if(ans != "" && ans == document.getElementById('opt1').value) {
-
-// 	}
-// }
-
+}
 
 
 </script>
@@ -246,7 +221,7 @@ if(checkAns() && document.getElementById('opt1').checked) {
 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-			<input type="reset" id="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
+			<input type="reset" id="reset"  onClick="reloadPage()" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
 
 			</div>
 

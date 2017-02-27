@@ -26,12 +26,11 @@ function validateForm() {
 	}
 
 	else if(userName == password) {
-		alert('Successful login!');
-		location.href="Question1.html";
+		window.location.href="Question1.html";
 
 	} else {
 		alert('Login Error: Wrong username and password!');
-		location.href="login.html";
+		window.location.href="LoginPage.html";
 	}
 
 }

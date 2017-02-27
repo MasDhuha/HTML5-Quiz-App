@@ -49,10 +49,6 @@ function submitQuestion() {
 	mathA = parseInt(urlAns);
 
 
-
-
-
-
 	function checkB1() {
 
 	var optionSelected = document.getElementsByName('blank1');
@@ -89,53 +85,28 @@ if(checkB1() && document.getElementById('opt1').checked && checkB2() && document
 	verbalC++;
 	verbalA++;
 
-	alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	// alert('Correct! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else if(checkB1() || checkB2()) {
 			ansCount++;
 
 			verbalA++;
-		alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else {
-		alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
+		// alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 	}
 
 }
 
-// if(ans != "" && ans != null && ans=="opt1") {
-// 	alert('Correct!');
-// 	// location.href = 'Question2.html?s=1&a=1';
-// } else if(ans != "" && ans!=null && ans!="opt1") {
-// 	alert('Wrong!');
-// 	// location.href = 'Question2.html?s=0&a=1';
-// } else {
-// 	// location.href = 'Question2.html?s=0&a=0';
-// 	alert('No option Selected!');
-// }
+function reloadPage() {
 
-// }
+	window.location.reload();
 
-// function checkAns() {
-
-// 	var radioSelected = document.getElementsByName('quest1');
-// 	var ans;
-
-// 	for(var i=0; i<radioSelected.length; i++) {
-// 		if(radioSelected[i].checked) {
-// 			ans = radioSelected[i].value;
-
-// 			break;
-// 		}
-// 	}
-
-// 	if(ans != "" && ans == document.getElementById('opt1').value) {
-
-// 	}
-// }
+}
 
 
 
@@ -221,8 +192,6 @@ if(checkB1() && document.getElementById('opt1').checked && checkB2() && document
 
 	<div class="right">
 
-		<!-- style="float:right;padding-right:10px;" -->
-
 		<aside>
 				<p style="text-align:justify;padding-right:30px;padding-left:100px">
 					Twitter wants more cash. The company announced two $ <mark id="b1">___ </mark> million debt offerings in a filing today, each with a potential $100 increase provided that the sales are oversubscribed. Assuming full tip, including the 100 million boosters, <mark id="b2"> ____ </mark> will raise up to $1.5 billion with the two offerings.
@@ -257,7 +226,7 @@ if(checkB1() && document.getElementById('opt1').checked && checkB2() && document
 
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-			<input type="reset" name="reset" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
+			<input type="reset" name="reset" onClick="reloadPage()" value="Cancel & Clear Section" style="border-radius:10px;height:40px;background-color:white">
 
 			</div>
 
