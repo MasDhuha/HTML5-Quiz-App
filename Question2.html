@@ -37,7 +37,7 @@ function submitQuestion() {
 	return false;
 }
 
-if(check() && document.getElementById('opt4').checked) {
+if(check() && document.getElementById('opt1').checked) {
 	correctCount = correctCount +1;
 	ansCount++;
 
@@ -45,7 +45,7 @@ if(check() && document.getElementById('opt4').checked) {
 	window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 	}
 
-	else if(check() && !document.getElementById('opt4').checked) {
+	else if(check() && !document.getElementById('opt1').checked) {
 		ansCount++;
 		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
 		window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
@@ -94,7 +94,7 @@ function reloadPage() {
 		<section class="left">
 			<p style="padding-left:10px; text-align:left; padding-bottom:20px"> 
 				Select the cosine theorem formula. 
-				<data id="correct-answer" value="opt4"></data>
+				<data id="correct-answer" value="opt1"></data>
 			</p>
 
 			<form name="form2" method="post" style="padding-left:10px;text-align:left;margin-top:40px;margin-bottom:40px">
