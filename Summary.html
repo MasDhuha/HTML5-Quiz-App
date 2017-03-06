@@ -32,6 +32,28 @@
 
 	}
 
+	function finish() {
+
+		if (typeof(Storage) !== "undefined") {
+		// localStorage.setItem("quantA", 0);
+		// localStorage.setItem("verbalA", 0);
+		// localStorage.setItem("videoA", 0);
+
+		// localStorage.setItem("quantC", 0);
+		// localStorage.setItem("verbalC", 0);
+		// localStorage.setItem("videoC", 0);
+
+		localStorage.clear();
+
+		} else {
+
+		}
+
+		window.location.href='LoginPage.html';
+
+
+	}
+
 	// function showScoreQ() {
 
 	// 	var urlRecieved = window.location.search;
@@ -255,7 +277,7 @@
 
 			<br><br>
 
-			<input type="button" id="finish" value="Finish" onClick="location.href='LoginPage.html'" style="border-radius:10px;height:40px;background-color:white; width:200px">
+			<input type="button" id="finish" value="Finish" onClick="finish()" style="border-radius:10px;height:40px;background-color:white; width:200px">
 
 
 		</div>

@@ -26,6 +26,21 @@ function validateForm() {
 	}
 
 	else if(userName == password) {
+
+
+		if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("quantA", 0);
+		localStorage.setItem("verbalA", 0);
+		localStorage.setItem("videoA", 0);
+
+		localStorage.setItem("quantC", 0);
+		localStorage.setItem("verbalC", 0);
+		localStorage.setItem("videoC", 0);
+
+		} else {
+		}
+
+		
 		window.location.href="Question1.html";
 
 	} else {
