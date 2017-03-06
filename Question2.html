@@ -13,14 +13,14 @@ function submitQuestion() {
 	var urlRecieved = window.location.search;
 	var correctCount;
 	var ansCount;
-	var url = urlRecieved.split("?");
+	// var url = urlRecieved.split("?");
 
-	var urlCorrectAndAns = url[1].split("&");
-	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-	var urlAns = urlCorrectAndAns[1].split("=")[1];
+	// var urlCorrectAndAns = url[1].split("&");
+	// var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// var urlAns = urlCorrectAndAns[1].split("=")[1];
 
-	correctCount = parseInt(urlCorrect);
-	ansCount = parseInt(urlAns);
+	// correctCount = parseInt(urlCorrect);
+	// ansCount = parseInt(urlAns);
 
 
 	function check() {
@@ -37,23 +37,75 @@ function submitQuestion() {
 	return false;
 }
 
-if(check() && document.getElementById('opt1').checked) {
-	correctCount = correctCount +1;
-	ansCount++;
+// if (typeof(Storage) !== "undefined") {
 
-	// alert('Correct! correct= '+correctCount+' ans= '+ansCount);
-	window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
+// 	localStorage.setItem("quantA",0);
+// 	localStorage.setItem("verbalA",0);
+// 	localStorage.setItem("videoA",0);
+
+// 	localStorage.setItem("quantC",0);
+// 	localStorage.setItem("verbalC",0);
+// 	localStorage.setItem("videoC",0);
+
+
+// } else {
+
+
+
+
+
+// }
+
+if(check() && document.getElementById('opt1').checked) {
+
+	if (typeof(Storage) !== "undefined") {
+		var a = parseInt(localStorage.getItem("quantA")) + 1;
+		localStorage.setItem("quantA", a);
+		var c = parseInt(localStorage.getItem("quantC")) + 1;
+		localStorage.setItem("quantC", c);
+		} else {
+	
+		}
+
+		window.location.href = "Question3.html";
+
+
+	// correctCount = correctCount +1;
+	// ansCount++;
+
+	// // alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	// window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 	}
 
 	else if(check() && !document.getElementById('opt1').checked) {
-		ansCount++;
-		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
+
+		if (typeof(Storage) !== "undefined") {
+			var a = parseInt(localStorage.getItem("quantA")) + 1;
+			// var c = parseInt(localStorage.getItem("quantC")) + 1;
+			localStorage.setItem("quantA", a);
+			// localStorage.setItem("quantC", c);
+			} else {
+	
+			}
+
+			window.location.href = "Question3.html";
+
+
+
+		// ansCount++;
+		// // alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		// window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 
 	}
 	else {
+
+		window.location.href = "Question3.html";
+
+
+
+
 		// alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
+		// window.location.href = "Question3.html?c=" +correctCount+ "&a=" +ansCount;
 	}
 }
 

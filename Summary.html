@@ -8,153 +8,176 @@
 
 	<script type="text/javascript">
 
-	function showScoreQ() {
 
-		var urlRecieved = window.location.search;
-		var correctCount;
-		var ansCount;
+	function finalScore() {
+	var quantC = localStorage.getItem("quantC");
+	var verbalC= localStorage.getItem("verbalC");
+	var videoC = localStorage.getItem("videoC");
+	
+	var quantA = localStorage.getItem("quantA");
+	var verbalA = localStorage.getItem("verbalA");
+	var videoA = localStorage.getItem("videoA");
 
-		var mathC;
-		var mathA;
+	document.getElementById('qa').innerHTML = quantA;
+	document.getElementById('qc').innerHTML = quantC;
+	document.getElementById('qs').innerHTML = quantC*50;
 
-		var verbalC;
-		var verbalA;
+	document.getElementById('ra').innerHTML = verbalA;
+	document.getElementById('rc').innerHTML = verbalC;
+	document.getElementById('rs').innerHTML = verbalC*50;
 
-		var videoC;
-		var videoA;
-
-		var url = urlRecieved.split("?");
-
-		var urlCorrectAndAns = url[1].split("&");
-
-		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-		var urlAns = urlCorrectAndAns[1].split("=")[1];
-
-		var urlMathC = urlCorrectAndAns[2].split("=")[1];
-		var urlMathA = urlCorrectAndAns[3].split("=")[1];
-
-		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
-		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
-
-		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
-		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
-
-		correctCount = parseInt(urlCorrect);
-		ansCount = parseInt(urlAns);
-
-		mathC = parseInt(urlMathC);
-		mathA = parseInt(urlMathA);
-
-		verbalC = parseInt(urlVerbalC);
-		verbalA = parseInt(urlVerbalA);
-
-		videoC = parseInt(urlVideoC);
-		videoA = parseInt(urlVideoA);
-
-		document.getElementById('qa').innerHTML = mathA;
-		document.getElementById('qc').innerHTML = mathC;
-		document.getElementById('qs').innerHTML = mathC*50;
-
+	document.getElementById('va').innerHTML = videoA;
+	document.getElementById('vc').innerHTML = videoC;
+	document.getElementById('vs').innerHTML = videoC*50;
 
 	}
 
-	function showScoreR() {
-		var urlRecieved = window.location.search;
-		var correctCount;
-		var ansCount;
+	// function showScoreQ() {
 
-		var mathC;
-		var mathA;
+	// 	var urlRecieved = window.location.search;
+	// 	var correctCount;
+	// 	var ansCount;
 
-		var verbalC;
-		var verbalA;
+	// 	var mathC;
+	// 	var mathA;
 
-		var videoC;
-		var videoA;
+	// 	var verbalC;
+	// 	var verbalA;
 
-		var url = urlRecieved.split("?");
+	// 	var videoC;
+	// 	var videoA;
 
-		var urlCorrectAndAns = url[1].split("&");
+	// 	var url = urlRecieved.split("?");
 
-		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-		var urlAns = urlCorrectAndAns[1].split("=")[1];
+	// 	var urlCorrectAndAns = url[1].split("&");
 
-		var urlMathC = urlCorrectAndAns[2].split("=")[1];
-		var urlMathA = urlCorrectAndAns[3].split("=")[1];
+	// 	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// 	var urlAns = urlCorrectAndAns[1].split("=")[1];
 
-		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
-		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+	// 	var urlMathC = urlCorrectAndAns[2].split("=")[1];
+	// 	var urlMathA = urlCorrectAndAns[3].split("=")[1];
 
-		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
-		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+	// 	var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+	// 	var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
 
-		correctCount = parseInt(urlCorrect);
-		ansCount = parseInt(urlAns);
+	// 	var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+	// 	var urlVideoA = urlCorrectAndAns[7].split("=")[1];
 
-		mathC = parseInt(urlMathC);
-		mathA = parseInt(urlMathA);
+	// 	correctCount = parseInt(urlCorrect);
+	// 	ansCount = parseInt(urlAns);
 
-		verbalC = parseInt(urlVerbalC);
-		verbalA = parseInt(urlVerbalA);
+	// 	mathC = parseInt(urlMathC);
+	// 	mathA = parseInt(urlMathA);
 
-		videoC = parseInt(urlVideoC);
-		videoA = parseInt(urlVideoA);
+	// 	verbalC = parseInt(urlVerbalC);
+	// 	verbalA = parseInt(urlVerbalA);
 
-		document.getElementById('ra').innerHTML = verbalA;
-		document.getElementById('rc').innerHTML = verbalC;
-		document.getElementById('rs').innerHTML = verbalC*50;
+	// 	videoC = parseInt(urlVideoC);
+	// 	videoA = parseInt(urlVideoA);
+
+	// 	document.getElementById('qa').innerHTML = mathA;
+	// 	document.getElementById('qc').innerHTML = mathC;
+	// 	document.getElementById('qs').innerHTML = mathC*50;
+
+	// }
+
+	// function showScoreR() {
+	// 	var urlRecieved = window.location.search;
+	// 	var correctCount;
+	// 	var ansCount;
+
+	// 	var mathC;
+	// 	var mathA;
+
+	// 	var verbalC;
+	// 	var verbalA;
+
+	// 	var videoC;
+	// 	var videoA;
+
+	// 	var url = urlRecieved.split("?");
+
+	// 	var urlCorrectAndAns = url[1].split("&");
+
+	// 	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// 	var urlAns = urlCorrectAndAns[1].split("=")[1];
+
+	// 	var urlMathC = urlCorrectAndAns[2].split("=")[1];
+	// 	var urlMathA = urlCorrectAndAns[3].split("=")[1];
+
+	// 	var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+	// 	var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+
+	// 	var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+	// 	var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+
+	// 	correctCount = parseInt(urlCorrect);
+	// 	ansCount = parseInt(urlAns);
+
+	// 	mathC = parseInt(urlMathC);
+	// 	mathA = parseInt(urlMathA);
+
+	// 	verbalC = parseInt(urlVerbalC);
+	// 	verbalA = parseInt(urlVerbalA);
+
+	// 	videoC = parseInt(urlVideoC);
+	// 	videoA = parseInt(urlVideoA);
+
+	// 	document.getElementById('ra').innerHTML = verbalA;
+	// 	document.getElementById('rc').innerHTML = verbalC;
+	// 	document.getElementById('rs').innerHTML = verbalC*50;
 
 
-	}
+	// }
 
-	function showScoreV() {
-		var urlRecieved = window.location.search;
-		var correctCount;
-		var ansCount;
+	// function showScoreV() {
+	// 	var urlRecieved = window.location.search;
+	// 	var correctCount;
+	// 	var ansCount;
 
-		var mathC;
-		var mathA;
+	// 	var mathC;
+	// 	var mathA;
 
-		var verbalC;
-		var verbalA;
+	// 	var verbalC;
+	// 	var verbalA;
 
-		var videoC;
-		var videoA;
+	// 	var videoC;
+	// 	var videoA;
 
-		var url = urlRecieved.split("?");
+	// 	var url = urlRecieved.split("?");
 
-		var urlCorrectAndAns = url[1].split("&");
+	// 	var urlCorrectAndAns = url[1].split("&");
 
-		var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-		var urlAns = urlCorrectAndAns[1].split("=")[1];
+	// 	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// 	var urlAns = urlCorrectAndAns[1].split("=")[1];
 
-		var urlMathC = urlCorrectAndAns[2].split("=")[1];
-		var urlMathA = urlCorrectAndAns[3].split("=")[1];
+	// 	var urlMathC = urlCorrectAndAns[2].split("=")[1];
+	// 	var urlMathA = urlCorrectAndAns[3].split("=")[1];
 
-		var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
-		var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+	// 	var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+	// 	var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
 
-		var urlVideoC = urlCorrectAndAns[6].split("=")[1];
-		var urlVideoA = urlCorrectAndAns[7].split("=")[1];
+	// 	var urlVideoC = urlCorrectAndAns[6].split("=")[1];
+	// 	var urlVideoA = urlCorrectAndAns[7].split("=")[1];
 
-		correctCount = parseInt(urlCorrect);
-		ansCount = parseInt(urlAns);
+	// 	correctCount = parseInt(urlCorrect);
+	// 	ansCount = parseInt(urlAns);
 
-		mathC = parseInt(urlMathC);
-		mathA = parseInt(urlMathA);
+	// 	mathC = parseInt(urlMathC);
+	// 	mathA = parseInt(urlMathA);
 
-		verbalC = parseInt(urlVerbalC);
-		verbalA = parseInt(urlVerbalA);
+	// 	verbalC = parseInt(urlVerbalC);
+	// 	verbalA = parseInt(urlVerbalA);
 
-		videoC = parseInt(urlVideoC);
-		videoA = parseInt(urlVideoA);
+	// 	videoC = parseInt(urlVideoC);
+	// 	videoA = parseInt(urlVideoA);
 		
-		document.getElementById('va').innerHTML = videoA;
-		document.getElementById('vc').innerHTML = videoC;
-		document.getElementById('vs').innerHTML = videoC*50;
+	// 	document.getElementById('va').innerHTML = videoA;
+	// 	document.getElementById('vc').innerHTML = videoC;
+	// 	document.getElementById('vs').innerHTML = videoC*50;
 
 
-	}
+	// }
 
 	
 
@@ -192,7 +215,7 @@
 			<section style="padding-left:40px">
 
 				<details>
-					<summary onClick="showScoreQ()"> Quantitive Section</summary>
+					<summary onClick="finalScore()"> Quantitive Section</summary>
 					<p> Number of Questions Answered: <span id="qa">____</span> </p>
 					<p> Number of Correct Answers: <span id="qc">____</span> </p>
 					<p> Score: <span id="qs">____</span> </p>
@@ -201,7 +224,7 @@
 				<br>
 
 				<details>
-					<summary onClick="showScoreR()"> Reading Section</summary>
+					<summary onClick="finalScore()"> Reading Section</summary>
 					<p> Number of Questions Answered: <span id="ra">____</span> </p>
 					<p> Number of Correct Answers: <span id="rc">____</span> </p>
 					<p> Score: <span id="rs">____</span> </p>
@@ -210,7 +233,7 @@
 				<br>
 
 				<details>
-					<summary onClick="showScoreV()"> Audio/Video Section</summary>
+					<summary onClick="finalScore()"> Audio/Video Section</summary>
 					<p> Number of Questions Answered: <span id="va">____</span> </p>
 					<p> Number of Correct Answers: <span id="vc">____</span> </p>
 					<p> Score: <span id="vs">____</span> </p>

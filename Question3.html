@@ -36,17 +36,17 @@ function submitQuestion() {
 	var verbalC=0;
 	var verbalA=0;
 
-	var url = urlRecieved.split("?");
+	// var url = urlRecieved.split("?");
 
-	var urlCorrectAndAns = url[1].split("&");
-	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-	var urlAns = urlCorrectAndAns[1].split("=")[1];
+	// var urlCorrectAndAns = url[1].split("&");
+	// var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// var urlAns = urlCorrectAndAns[1].split("=")[1];
 
-	correctCount = parseInt(urlCorrect);
-	ansCount = parseInt(urlAns);
+	// correctCount = parseInt(urlCorrect);
+	// ansCount = parseInt(urlAns);
 
-	mathC = parseInt(urlCorrect);
-	mathA = parseInt(urlAns);
+	// mathC = parseInt(urlCorrect);
+	// mathA = parseInt(urlAns);
 
 
 	function checkB1() {
@@ -79,25 +79,59 @@ function submitQuestion() {
 
 if(checkB1() && document.getElementById('opt1').checked && checkB2() && document.getElementById('opt2').checked) {
 
-	correctCount++;
-	ansCount++;
+	if (typeof(Storage) !== "undefined") {
+		var a = parseInt(localStorage.getItem("verbalA")) + 1;
+		localStorage.setItem("verbalA", a);
+		var c = parseInt(localStorage.getItem("verbalC")) + 1;
+		localStorage.setItem("verbalC", c);
+		} else {
+	
+		}
 
-	verbalC++;
-	verbalA++;
+		window.location.href = "Question4.html";
 
-	// alert('Correct! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
+
+
+
+	// correctCount++;
+	// ansCount++;
+
+	// verbalC++;
+	// verbalA++;
+
+	// // alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	// 	window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else if(checkB1() || checkB2()) {
-			ansCount++;
 
-			verbalA++;
-		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
+		if (typeof(Storage) !== "undefined") {
+		var a = parseInt(localStorage.getItem("verbalA")) + 1;
+		localStorage.setItem("verbalA", a);
+		// var c = parseInt(localStorage.getItem("verbalC")) + 1;
+		// localStorage.setItem("verbalC", c);
+		} else {
+	
+		}
+
+		window.location.href = "Question4.html";
+
+
+
+
+
+
+		// 	ansCount++;
+
+		// 	verbalA++;
+		// // alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		// window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 
 	} else {
+
+		window.location.href = "Question4.html";
+
 		// alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
+		// window.location.href = "Question4.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA;
 	}
 
 }

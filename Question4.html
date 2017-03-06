@@ -41,27 +41,27 @@ function submitQuestion() {
 
 	// "Question4.html?c=1&a=1&mc=1&ma=1&vc=1&va=1";
 
-	var url = urlRecieved.split("?");
+	// var url = urlRecieved.split("?");
 
-	var urlCorrectAndAns = url[1].split("&");
+	// var urlCorrectAndAns = url[1].split("&");
 
-	var urlCorrect = urlCorrectAndAns[0].split("=")[1];
-	var urlAns = urlCorrectAndAns[1].split("=")[1];
+	// var urlCorrect = urlCorrectAndAns[0].split("=")[1];
+	// var urlAns = urlCorrectAndAns[1].split("=")[1];
 
-	var urlMathC = urlCorrectAndAns[2].split("=")[1];
-	var urlMathA = urlCorrectAndAns[3].split("=")[1];
+	// var urlMathC = urlCorrectAndAns[2].split("=")[1];
+	// var urlMathA = urlCorrectAndAns[3].split("=")[1];
 
-	var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
-	var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
+	// var urlVerbalC = urlCorrectAndAns[4].split("=")[1];
+	// var urlVerbalA = urlCorrectAndAns[5].split("=")[1];
 
-	correctCount = parseInt(urlCorrect);
-	ansCount = parseInt(urlAns);
+	// correctCount = parseInt(urlCorrect);
+	// ansCount = parseInt(urlAns);
 
-	mathC = parseInt(urlMathC);
-	mathA = parseInt(urlMathA);
+	// mathC = parseInt(urlMathC);
+	// mathA = parseInt(urlMathA);
 
-	verbalC = parseInt(urlVerbalC);
-	verbalA = parseInt(urlVerbalA);
+	// verbalC = parseInt(urlVerbalC);
+	// verbalA = parseInt(urlVerbalA);
 
 	function checkAns() {
 
@@ -78,26 +78,59 @@ function submitQuestion() {
 }
 
 if(checkAns() && document.getElementById('opt1').checked) {
-	correctCount = correctCount +1;
-	ansCount++;
-
-	videoA++;
-	videoC++;
 
 
-	// alert('Correct! correct= '+correctCount+' ans= '+ansCount);
-	window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
+	if (typeof(Storage) !== "undefined") {
+		var a = parseInt(localStorage.getItem("videoA")) + 1;
+		localStorage.setItem("videoA", a);
+		var c = parseInt(localStorage.getItem("videoC")) + 1;
+		localStorage.setItem("videoC", c);
+		} else {
+	
+		}
+
+		window.location.href = "Survey.html";
+
+
+
+	// correctCount = correctCount +1;
+	// ansCount++;
+
+	// videoA++;
+	// videoC++;
+
+
+	// // alert('Correct! correct= '+correctCount+' ans= '+ansCount);
+	// window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else if(checkAns() && !document.getElementById('opt1').checked) {
-		ansCount++;
-		videoA++;
 
-		// alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
+
+		if (typeof(Storage) !== "undefined") {
+		var a = parseInt(localStorage.getItem("videoA")) + 1;
+		localStorage.setItem("videoC", a);
+		// var c = parseInt(localStorage.getItem("quantC")) + 1;
+		// localStorage.setItem("videoC", c);
+		} else {
+	
+		}
+
+		window.location.href = "Survey.html";
+
+
+
+		// ansCount++;
+		// videoA++;
+
+		// // alert('Wrong! correct= '+correctCount+' ans= '+ansCount);
+		// window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 
 	} else {
 		// alert('No option Selected! correct= '+correctCount+' ans= '+ansCount);
-		window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
+
+		window.location.href = "Survey.html";
+
+		// window.location.href = "Survey.html?c=" +correctCount+ "&a=" +ansCount+ "&mc=" +mathC+ "&ma=" +mathA+ "&vc=" +verbalC+ "&va=" +verbalA+ "&vid_c=" +videoC+ "&vid_a=" +videoA;
 	}
 }
 
